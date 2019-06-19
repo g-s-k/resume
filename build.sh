@@ -1,10 +1,10 @@
 #!/bin/sh
 
-mkdir -p build
+mkdir -vp build
 
 docker run \
        --mount src=$PWD,target=/usr/src/tex,type=bind \
        dxjoke/tectonic-docker \
-       /bin/sh -c "tectonic -o build Kaplan_George_resume.tex"
+       /bin/sh -c "tectonic -o build src/Kaplan_George_resume.tex"
 
-cp index.html build
+cp -v src/index.html build
