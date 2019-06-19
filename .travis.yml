@@ -1,0 +1,14 @@
+sudo: required
+language: generic
+services: docker
+
+script: ./build.sh
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local-dir: target/deploy
+  keep-history: true
+  on:
+    branch: master
