@@ -9,7 +9,7 @@ $(HTML): src/index.html build
 	cp -v $< $(@D)
 
 $(PDF): src/Kaplan_George_resume.tex build
-	docker run -v "$(PWD):/usr/src/tex" dxjoke/tectonic-docker \
+	docker run --rm -v "$(PWD):/usr/src/tex" dxjoke/tectonic-docker \
 		/bin/sh -c "tectonic -o $(@D) $<"
 
 build:

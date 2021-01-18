@@ -12,82 +12,108 @@
 \voffset=0.2in
 \renewcommand{\headrulewidth}{0pt}
 
-\lhead{ \Huge George Kaplan }
+\lhead{\Huge George Kaplan}
 
-\rhead{ \footnotesize
+\rhead{\footnotesize
 \href{mailto:kaplan.george@outlook.com}{kaplan.george@outlook.com} \\
 $518.852.4731$ }
 
-\chead{ \footnotesize Baltimore, MD \\
+\chead{\footnotesize Baltimore, MD \\
 \href{https://github.com/g-s-k}{github.com/g-s-k} }
 
 \lfoot{}
 \cfoot{}
 \rfoot{}
 
-\newcommand{\dotfringe}{
-    \begin{center}
-      $\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots$
-    \end{center}
-}
-
 \renewcommand{\labelitemi}{$\triangleright$}
+
+\linespread{0.9}
 
 \begin{document}
 \pagenumbering{gobble}
 
-\dotfringe{}
+\section*{Summary}
+\paragraph{Programming Languages \& Frameworks:} JavaScript / React, Elixir /
+Phoenix, Rust, Golang, \LaTeX\@
+
+\paragraph{Tools:} Docker, Kubernetes, build tooling (e.g.\ linters, CI,
+Makefiles, package vendoring and publishing)
+
+\paragraph{Credentials:} TS clearance with Full Scope polygraph
+
+\dotfill
 
 \section*{Education}
 \subsection*{University of Maryland, College Park}
+\paragraph{}
 \textit{Bachelor's of Science in Physical Sciences} \hfill 2012 --- 2016
 
-\subparagraph{Concentrations:} Atmospheric and Oceanic Science, Chemistry, and
-Geology
+\begin{itemize}
+  \item Concentrations in Atmospheric and Oceanic Science, Chemistry, and Geology
+\end{itemize}
 
-\dotfringe{}
+\dotfill
 
 \section*{Experience}
-\subsection*{Visionist, Inc.}
-\textit{Engineer 2} \hfill August 2018 --- present
+\subsection*{Visionist Incorporated}
+\paragraph{}
+\textit{Engineer 3} \hfill November 2020 --- present
+
+\begin{itemize}
+  \item Maintained and enhanced a group of analytics for audio data using
+    Elixir as the API layer and Rust to implement the algorithms for its
+    performance benefits. This was made relatively painless using the
+    \textit{Rustler} library and the \textit{Phoenix} framework.
+  \item Fleshed out a system management interface from a minimal scaffold into
+    a useful tool using the \textit{Phoenix LiveView} library and
+    \textit{Bulma} CSS framework. This interface is used to dynamically
+    allocate and customize our analytic components via \textit{Helm}, and to
+    monitor their performance, without needing to provide shell access to
+    administrators or require them to understand \textit{Kubernetes}.
+\end{itemize}
+
+\paragraph{}
+\textit{Engineer 2} \hfill August 2018 --- October 2020
+
 \begin{itemize}
   \item Helped scale a suite of applications for real-time geographic data
     analysis up from prototype to production, focusing on performance and
     reliability. Improved communication between the development team and our
     user base to implement a faster and more robust feedback loop.
-  \item Built and maintained a richly interactive web form for fine-grained
-    control of analytic rules using ReactJS.\@ Incorporated usability
-    recommendations from our UX specialists, feature requests from our users,
-    and requirements from our contract in each iteration of the design.
-  \item Paid down technical debt, improved test coverage, and wrote
-    documentation for backend Go code that had not been touched in years.
-    Ensured that corner cases were addressed and that extensible solutions were
-    adopted where possible.
-  \item Planned, contributed development time, and reviewed PRs for our UI core
-    library, a developer-organized effort to manage complexity in our
-    applications.
+  \item Built and maintained a richly interactive web form using \textit{React}
+    to give users fine-grained control over their analytic rules. Incorporated
+    usability recommendations from our UX specialists, feature requests from
+    our users, and technical requirements from our contract in each iteration
+    of the design.
+  \item Planned, contributed significant development time, and reviewed pull
+    requests for our UI core library, a developer-organized effort to manage
+    complexity in a suite of applications.
 \end{itemize}
+
 \subsection*{Nu-Tek Precision Optical Corporation}
+\paragraph{}
 \textit{Engineer 1} \hfill May 2016 --- August 2018
 \begin{itemize}
-  \item Developed and maintained a proprietary MATLAB toolbox for processing optical data.
-  \item Automated administrative tasks with Python and PowerShell scripts.
-  \item Created analytical and automation tools for manufacturing and metrology using Rust and C++.
-  \item Compiled, designed, and typeset product certifications with \LaTeX.
+  \item Developed and maintained a proprietary MATLAB toolbox for processing a
+    variety of optical data formats, supporting common manipulations such as
+    Zernike decomposition, FFT analysis, and generation of corrective programs
+    for computer-controlled polishing machines.
+  \item Automated various administrative tasks such as printing work orders,
+    tracking progress on each project, and generating customer documentation
+    with \textit{PowerShell} and \LaTeX.
 \end{itemize}
-\subsection*{The Research Foundation for SUNY}
+
+\subsection*{The Research Foundation for the State University of New York}
+\paragraph{}
 \textit{Innovation and Partnerships Intern} \hfill Summer 2014 and 2015
 \begin{itemize}
-  \item Assisted in implementing the \href{https://esd.ny.gov/startup-ny-program}{START-UP New York} and \href{https://www.rfsuny.org/Our-Work/Innovation-and-Partnerships/Programs/Technology-Accelerator-Fund/}{Technology Accelerator Fund} programs.
-  \item Reviewed grant proposals to assess the feasibility and potential marketability of new technologies.
+  \item Assisted in implementing the
+    \href{https://esd.ny.gov/startup-ny-program}{START-UP New York} and
+    \href{https://www.rfsuny.org/Our-Work/Innovation-and-Partnerships/Programs/Technology-Accelerator-Fund/}{Technology
+    Accelerator Fund} programs.
+  \item Performed a detailed analysis on the performance of hundreds of
+    businesses associated with SUNY campuses to support a program proposal
+    effort.
 \end{itemize}
-\dotfringe{}
-\section*{Technical Skills}
-  \subparagraph{Languages \& Frameworks:} JavaScript / TypeScript, React, Rust,
-  Go, Racket, MATLAB, \LaTeX\@
-  \subparagraph{Tools:} Docker, Kubernetes, build tooling (e.g.\ linters, CI,
-  Makefiles, package vendoring and publishing)
-
-\dotfringe{}
 
 \end{document}
