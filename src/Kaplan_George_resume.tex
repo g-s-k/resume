@@ -32,8 +32,7 @@ $+46.73.771.28.95$ }
 \pagenumbering{gobble}
 
 \section*{Summary}
-\paragraph{Technologies:} Rust, JavaScript / TypeScript, React,
-Dart / Flutter, Docker, Serverless
+\paragraph{Technologies:} Rust, C, JUCE, Linux, PipeWire, JavaScript
 
 \paragraph{Interests:} Music technology, DSP, generative art, user
 experience and accessibility, parsers and compilers
@@ -45,14 +44,18 @@ experience and accessibility, parsers and compilers
 \paragraph{}
 \textit{Rust Audio Developer} \hfill May 2022 --- present
 \begin{itemize}
-  \item Building a development platform for the next generation of
-    hardware music devices from Elektron, with a modern technical stack
-    (\textit{Rust}, \textit{Protobuf}, \textit{RocksDB}) and primary
-    design goals of portability and flexibility.
-  \item Prototyping the initial products on the new platform, integrating
-    both legacy IP and new concepts to create a unique and compelling user
-    experience. Knowledge gathered in this process is then used to iterate
-    on the design of the underlying infrastructure.
+  \item Building a hardware music device (\textit{Tonverk}), and with it, a new
+    development platform for Elektron based on a modern technical stack
+    (\textit{Rust}, \textit{RocksDB}, \textit{PipeWire}, \textit{embedded
+    Linux}).
+  \item Creating sound source and audio effect plugins, applying ideas from
+    both existing IP and the DSP literature. Integrating these via FFI in order
+    to facilitate code-sharing with other product lines.
+  \item Optimizing performance on embedded hardware, guided by benchmarks and
+    profile results. Monitoring and improving reliability with automated
+    testing at all levels of the access hierarchy.
+  \item Assisting in the instrument design process with feedback from both a
+    technical and user perspective.
 \end{itemize}
 
 \subsection*{Fearless Solutions \hfill \textnormal{\small Baltimore, MD, USA}}
@@ -62,7 +65,7 @@ experience and accessibility, parsers and compilers
   \item Adopted and expanded a prototype application built with \textit{React}
     and the \textit{Serverless Framework} into a production-ready state, and
     delivered it to users on time.
-  \item Spearheaded an effort among technical personnel to improve code
+  \item Spearheaded an effort among developers and testers to improve code
     quality, test coverage, and user accessibility, leading to a significant
     decrease in defects and regressions pushed into the staging environment.
   \item Collaborated with security and operations teams to address findings
