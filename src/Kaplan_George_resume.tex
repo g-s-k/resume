@@ -1,5 +1,5 @@
 \documentclass[10pt]{article}
-\usepackage[margin=0.75in]{geometry}
+\usepackage[margin=0.75in,top=0.95in,headheight=30pt,headsep=7pt]{geometry}
 \usepackage[pdfauthor={George Kaplan},%
             pdftitle={George Kaplan's Resume},%
             hidelinks,%
@@ -7,15 +7,22 @@
             pdftoolbar=false,%
             pdfstartview={FitH}]{hyperref}
 \usepackage{fancyhdr}
+
+% Use non-default font.
+\usepackage{charter}
+
+% Bullet lists: tighter than the article defaults, with a triangle marker.
+\usepackage{enumitem}
+\setlist[itemize]{label=$\triangleright$, topsep=4pt, itemsep=4pt, parsep=0pt}
+
 \pagestyle{fancy}
-\voffset=0.2in
 \renewcommand{\headrulewidth}{0pt}
 
 \lhead{\Huge George Kaplan}
 
 \rhead{\footnotesize
 \href{mailto:kaplan.george@outlook.com}{kaplan.george@outlook.com} \\
-$+46.73.771.28.95$ }
++46 73 771-28 95 }
 
 \chead{\footnotesize Gothenburg, Sweden\\
 \href{https://github.com/g-s-k}{github.com/g-s-k} }
@@ -24,89 +31,100 @@ $+46.73.771.28.95$ }
 \cfoot{}
 \rfoot{}
 
-\renewcommand{\labelitemi}{$\triangleright$}
+% \entry{Organization}{Location}{Title}{Dates}
+\newcommand{\entry}[4]{%
+  \subsection*{#1, \textnormal{\normalsize\textit{#3}}%
+    \hfill \textnormal{\small #2 $\cdot$ #4}}%
+}
+
+% \project{Name}{github.com/g-s-k/repo}{One-line description}
+\newcommand{\project}[3]{%
+  \item \textbf{#1}: #3 \hfill {\small\href{https://#2}{#2}}%
+}
 
 \linespread{0.9}
+\setlength{\parindent}{0pt}
 
 \begin{document}
 \pagenumbering{gobble}
 
-\section*{Summary}
-\paragraph{Technologies:} Rust, C, JUCE, Linux, PipeWire, JavaScript
+Audio software engineer with ten years of experience, the last four building
+and maintaining a hardware instrument in Rust on embedded Linux. Previously
+focused on full-stack and analytics work for signal processing, geospatial and
+manufacturing applications.
 
-\paragraph{Interests:} Music technology, DSP, generative art, user
-experience and accessibility, parsers and compilers
+\vspace{2ex}
+
+Proficient in English and Swedish. Open to hybrid or remote work.
+
+\vspace{2ex}
+
+\textbf{Technical skills:} Rust, C, Linux, DSP, real-time programming, JavaScript,
+React, Elixir, MATLAB
 
 \dotfill
 
 \section*{Experience}
-\subsection*{Elektron Music Machines \hfill \textnormal{\small Gothenburg, Sweden}}
-\paragraph{}
-\textit{Rust Audio Developer} \hfill May 2022 --- present
+\entry{Elektron Music Machines}{Gothenburg, Sweden}{Rust Audio Developer}{2022 -- present}
 \begin{itemize}
-  \item Building a hardware music device (\textit{Tonverk}), and with it, a new
-    development platform for Elektron based on a modern technical stack
-    (\textit{Rust}, \textit{RocksDB}, \textit{PipeWire}, \textit{embedded
-    Linux}).
-  \item Creating sound source and audio effect plugins, applying ideas from
-    both existing IP and the DSP literature. Integrating these via FFI in order
-    to facilitate code-sharing with other product lines.
-  \item Optimizing performance on embedded hardware, guided by benchmarks and
-    profile results. Monitoring and improving reliability with automated
-    testing at all levels of the access hierarchy.
-  \item Assisting in the instrument design process with feedback from both a
-    technical and user perspective.
+  \item Built and released a new hardware instrument (\textit{Tonverk}) on a
+    new development platform based on Rust and embedded Linux, then shipped
+    four major OS updates within its first year on the market.
+  \item Designed and implemented signature features of \textit{Tonverk}
+    including the multi-sampled instrument format, \mbox{\textit{Subtracks}}
+    machine, \textit{Auto Sampler}, and its track-routing system, drawing on my
+    own experience as a musician and sound designer.
+  \item Created audio effects for \textit{Tonverk} such as \textit{Degrader},
+    \textit{Comb ± Filter}, and \textit{Frequency Warper}. These were built in
+    C as part of a portable DSP library, intended to share code with other
+    products.
+  \item Designed and built the platform's USB device-mode framework, as a Rust
+    application driving the Linux gadget configfs interface, allowing the
+    exposed functions to be switched at runtime without a reboot. This supports
+    Elektron's switchable UAC2 / Overbridge operation modes and will be used in
+    future products.
 \end{itemize}
 
-\subsection*{Fearless Solutions \hfill \textnormal{\small Baltimore, MD, USA}}
-\paragraph{}
-\textit{Software Engineer 2} \hfill March 2021 --- April 2022
+\entry{Fearless Solutions}{Baltimore, MD, USA}{Software Engineer}{2021 -- 2022}
 \begin{itemize}
-  \item Adopted and expanded a prototype application built with \textit{React}
-    and the \textit{Serverless Framework} into a production-ready state, and
-    delivered it to users on time.
-  \item Spearheaded an effort among developers and testers to improve code
-    quality, test coverage, and user accessibility, leading to a significant
-    decrease in defects and regressions pushed into the staging environment.
+  \item Took a React and AWS Lambda document management application from demo
+    to production for the U.S. Centers for Medicare \& Medicaid Services (CMS),
+    and delivered it before the contract deadline. Added legal review and
+    approval workflows, data migration, user management, and email
+    notifications.
   \item Collaborated with security and operations teams to address findings
-    from a pre-deployment audit. All findings were eliminated well in advance
-    of the subsequent audit, and the deployment to production was able to
-    proceed without incident.
+    from a pre-deployment audit. Closed every finding well in advance of the
+    subsequent audit, and the deployment to production proceeded without
+    incident.
 \end{itemize}
 
-\subsection*{Visionist Incorporated \hfill \textnormal{\small Columbia, MD, USA}}
-\paragraph{}
-\textit{Engineer 3} \hfill August 2018 --- February 2021
-
+\entry{Visionist Incorporated}{Columbia, MD, USA}{Software Engineer}{2018 -- 2021}
 \begin{itemize}
-  \item Maintained and enhanced an audio processing and analytics service,
-    with the API and administrative UI implemented using \textit{Phoenix (Elixir)}
-    and the audio DSP implemented in \textit{Rust}.
-  \item Scaled a suite of applications for real-time geographic data
-    analysis up from prototype to production, focusing on performance and
-    reliability. Improved communication between the development team and our
-    user base to implement a faster and more robust feedback loop.
+  \item Maintained and enhanced an audio processing and analytics service, with
+    the API and administrative UI implemented using Phoenix (Elixir) and the
+    audio DSP implemented in Rust.
+  \item Scaled a suite of applications for real-time geographic data analysis
+    up from prototype to production, focusing on performance and reliability.
 \end{itemize}
 
-\subsection*{Nu-Tek Precision Optical Corporation \hfill \textnormal{\small Aberdeen, MD, USA}}
-\paragraph{}
-\textit{Staff Engineer 1} \hfill May 2016 --- August 2018
+\entry{Nu-Tek Precision Optical Corporation}{Aberdeen, MD, USA}{Engineer}{2016 -- 2018}
 \begin{itemize}
-  \item Developed a 2D signal processing toolbox for MATLAB, for use in a specialized
-    manufacturing environment. Supported a variety of ETL formats and domain-specific
-    manipulations. Results could be visualized quickly, formatted with custom report
-    templates using \LaTeX, or exported as program data for CNC correction processes.
+  \item Developed a 2D signal processing toolbox for MATLAB, for use in a
+    specialized manufacturing environment.
+\end{itemize}
+
+\dotfill
+
+\section*{Projects}
+\begin{itemize}
+    \project{pxsort}{github.com/g-s-k/pxsort}{Image glitch generator in Rust with a WebAssembly demo}
+    \project{lox-lang}{github.com/g-s-k/lox-lang}{Rust implementation of the Lox language from \textit{Crafting Interpreters}}
+    \project{matlab-toml}{github.com/g-s-k/matlab-toml}{TOML serializer/deserializer for MATLAB}
 \end{itemize}
 
 \dotfill
 
 \section*{Education}
-\subsection*{University of Maryland \hfill \textnormal{\small College Park, MD, USA}}
-\paragraph{}
-\textit{Bachelor's of Science in Physical Sciences} \hfill 2012 --- 2016
-
-\begin{itemize}
-  \item Concentrations in Atmospheric and Oceanic Science, Chemistry, and Geology
-\end{itemize}
+\entry{University of Maryland}{College Park, MD, USA}{B.Sc.\ in Physical Sciences}{2012 -- 2016}
 
 \end{document}
